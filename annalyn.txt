@@ -26,6 +26,7 @@ and whether Annalyn's pet dog is present or not.
 3. Check if the prisoner can be signaled
 4. Check if the prisoner can be freed
 */
+
 package annalyn
 
 // CanFastAttack can be executed only when the knight is sleeping.

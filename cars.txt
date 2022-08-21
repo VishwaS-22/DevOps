@@ -26,10 +26,10 @@ func CalculateWorkingCarsPerMinute(productionRate int, successRate float64) int 
 
 const x=10000
 const y=95000
+
 // CalculateCost works out the cost of producing the given number of cars.
 func CalculateCost(carsCount int) uint {
     single:=uint(x*(carsCount%10))
     tencar:=uint(y*(carsCount/10))
     return single+tencar
-    
-}
+    }

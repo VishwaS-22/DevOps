@@ -1,3 +1,4 @@
+//Boolean
 /*
 Instructions
 In this exercise, you'll be implementing the quest logic for a new RPG game a friend is developing. The game's main character is Annalyn, 

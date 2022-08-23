@@ -44,7 +44,7 @@ if fuelRemaining >=fuelCost{
   }
   return fuelRemaining
   }
-func main() {
+func main(){
   // Test your functions!
   var fuel int
   fuel=1000000

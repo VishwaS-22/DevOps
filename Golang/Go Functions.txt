@@ -24,7 +24,7 @@ func calculateFuel(planet string) int{
 }
 // Create the function greetPlanet() here
 func greetPlanet(planet string){
-  fmt.Println("Welcometo the planet",planet)
+  fmt.Println("Welcome to the planet",planet)
 }
 // Create the function cantFly() here
 func cantFly(){

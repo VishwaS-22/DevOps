@@ -59,40 +59,47 @@ ISP (Internet Service Provider) will have Global IP address and the Network Devi
 Note: Global IP address is nothing but if we request Google and there server will know this request is made from this IP(our ISP) not our Computer's IP.
 
 Now which application is requested from our device and that will be identified with the help of Port Number.(IP identifies Device & Port Number identifies which application on the device).
+
 Port Number:
 It is used to identifies the application which is requested from the device.
 Basically a 16 bit number each contains 0's and 1's.
 Totally there are 65536 ports in that 0-1023 are reserved, 1024 -49152 are registered for applications like MySQL, MongoDB and we can use the rest for our use. Note: Port Number 80 is used to identifies the application which is requested.
+
 How are the Computer's connected?
 In Guided and Unguided way(Basically Wired & Wireless respectively).
 Wired uses Twisted Pair Cable, Coxial Cable and Fibre Opticable whereas Wireless are Radiowave's and Microwave's.
 Wired are faster then Satellites and Wireless are used for lower range like Bluetooth, Wifi etc.
+
 Types of Network's:
 LAN - Local Area Network (used in houses/offices like Wifi and Ethernet), MAN - MetroPolitan Area Network (across Cities), WAN - Wide Area Network (across Countries by FibreOptical Cables).
 
 Topologies:
+
 1.Bus:
 Computers are connected to particular cable and If the cable breaks no data Transfers.
 Only one system can send data at one time.
+
 2.Ring:
 Every computers are connected with one another, connected like a ring.
 It has limitations like if cable breaks, it spoils the entire networks and unnecessary calls are also made lets say we have A,B,C,D and E as a ring network, for A-D (data transfers), it calls B & C also because there is no direct connection.
+
 3.Star:
 One central(Hub) is there, all are connected to that central hub.
 If central fails, network goes down.
+
 4.Tree:
 It is nothing but the Combination of Bus and Star.
+
 5.Mesh:
 Every single computer is connected with each and every other computers.
 It is expensive because so much of wires are needed.
 Scalability Issues that is if one new wants to add to the network, that has to be connects with every single computes.
+
 Structure of the Network:
 Basically the Network's structure is based on the OSI Model.
 OSI Model stands for Open System Interconnection Model and this is how thee Internet works.
 This is the standard way for 2 or more computers communicate with each other.
 It has Seven Layers and they are,
-
-COPY
                                1.Application layer,
                                2.Presentation layer,
                                3.Session layer,
@@ -107,10 +114,12 @@ This is top most layer of OSI model & basically it is implemented in software/ap
 -This layer is used to collect the data from the application layer and converts into machine readable format.
 
 It encrypts the data and also compress it to reduce the traffic.
+
 3.Session layer:
 It helps to manage the connections between the sender and the receiver.
 It enables the sending and receiving of data followed by the termination of established sessions.
 Before a session establishes authentication takes place.
+
 4.Transport layer:
 Basically, in this layer transportation takes place in three ways and they are Segmentation, Flow control, Error control.
 
@@ -124,11 +133,13 @@ Basically, in this layer transportation takes place in three ways and they are S
 It uses Routers because the data segments received will be transmits to one computer to the another one in different network.
 It assigns IP to the every data packets that is received and It is called Logical adressing.
 Load balance is also happens here.
+
 6. Datalink layer:
 Basically, packet consists of three things IP of both Sender & Receiver and Subnet mask(Masks the network part of IP and leaves the host part to use).
 Physical addressing is done at this layer(
 MAC(physical) address which is a 12 digit alphanumeric number of a network interface for our computer and computer not only has only one MAC address, Bluetooth my have one address and Wifi may have different address.
 Adding IP's to the frame(units of data) & transmitting is data link layer.
+
 7.Physical layer
 It receives the data in bits and converts into which signal they wants like electrical, radio or light.
 
@@ -136,18 +147,23 @@ TCP/IP Model:
 It contains only five layers only and they are application layer, transport layer, network layer, datalink layer, physical layer.
 
 Network Devices:
+
 1.Repeater:
 At physical layer, it regenerates the received signal before it becomes weak or corrupted. It does not amplify, it only copy the signal bit by bit and regenerates it.
 Basically, it is called two port device(two pairs of terminals that connects to external circuit).
+
 2.Hub:
 It is a Multiport device and it connects multiple wires from different branches.
 Does not find best path for data packets, leads to inefficiencies and wastage.
+
 3.Bridge:
 It operates at datalink layer and it is repeater, also used to filter content by reading mac addresses of source and destination.
 Used for interconnecting two LAN's working at the same protocol, it has single input and single output ports that makes it as two port device.
+
 4.Switch:
 It is a Multiport bridge which boost it's efficiency and performs.
 Also it is a datalink layer & performs error checking before forwarding the data packets which improves the efficiency.
+
 5.Router:
 It is nothing but it route the data packets to the destination address in the network layer.
 
@@ -155,6 +171,7 @@ It is nothing but it route the data packets to the destination address in the ne
 Basically, it is a passage to connect two networks together that may work on different network models.
 More complex than router and switch.
 Works as a messenger agents, take data from one system and transfers to another. It is called protocol converters that works at any network layers.
+
 7.Brouter:
 Combination of Bridge and Router. Works either at datalink layer or at network layer.
 While works as router, capable of routing packets across networks and as bridge able to filter traffic at networks.

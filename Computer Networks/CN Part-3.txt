@@ -1,0 +1,199 @@
+Computer Networks:
+
+“Everything You Need To Know About Computer Networks, Part-3”.
+
+Introduction:
+Hey Folks! Welcome to the world of Computer Networks. Am Vishwa who is currently learning DevOps with the help of Communities and OpenSource. This is my 3rd Blog which is the last one of Networks. I published two Blogs already, you can check it in my Profile. In this Blog you will learn about Transport layer, Multiplexing & De-Multiplexing, Checksums, Timers and Protocols of Transport layer and Three-way handshaking then about Network layer, Internet Protocols such as IPv4 and IPv6, Data-Link layer.
+
+Transport layer:
+This is nothing but the Transportation of the network to the application is done by Transport layer only.
+
+Simply, One computer to another computer the transportation part is done by network layer in that Transport layer lies on the Computers(Devices), it receives the message sent from the network and sends to the application. Example: Courier.
+
+Multiplexing:
+
+It is nothing but accepting data from more than 1 source and sending as a whole to the receiver is called Multiplexing. Example: Phone Calls
+
+De-Multiplexing:
+
+It is a reverse of Multiplexing. That is delivering received data segments to more than 1 source is called De-Multiplexing. Example: Barcode Information.
+
+
+Data will be sent in packets and it will add this socket port numbers so that receiver knows where it is comes from and where to send it.
+Transport layer takes care of Congestion control and this algorithm(Congestion control) is built in this layer only.
+Checksums: It is a Random number that we add it to the segments we are sending to know whether the data received are not corrupted.
+
+Timers:
+
+It is nothing but we will start a timer after we sent a packet to the receiver, if the receiver gave acknowledgement means the timer will ends. If not received any acknowledgement from the receiver before the timer ends mean the sender will resend the same packets again.
+
+
+To overcome this we use sequence number, when it is received again with the same sequence number then it says we already have this, it is duplicate.
+
+Transport layer Protocols:
+1. TCP,
+2. UDP.
+
+1. UDP:
+It stands for User Datagram Protocol.
+Data may not be delivered.
+Data may change.
+Data may not in order.
+It is a Connectionless protocol and it uses Checksum too but doesn’t care about if the data are lost or corrupted.
+
+UDP Packet:
+
+The Total size of the data that we can send in 1 packet is 2¹⁶ — 8 = 65,528.
+
+Use Cases:
+
+It is Very fast,
+DNS uses UDP only,
+For Gaming too,
+Example: Video Conference.
+Note: To see the data that come in and out of your computer, use tcpdump command with PacketNumber. That is #sudo tcpdump -c 5.
+
+TCP:
+It stands for Transmission Control Protocol and it is a Transport layer protocol.
+Application layer send lots of raw data and TCP segments this data and adds header to it.
+It may also collect data from transport layer and the network layer will divide that into more smaller chunks then at the receiver end those data will be put into one.
+
+Features:
+
+It is a Connection Oriented protocol,
+Error Control,
+Congestion Control,
+Full duplex (It is nothing but two systems that can share files each other simultaneously). Example: Phone Call.
+Note: We can’t have like One system to ten other systems, every system that connected with another one system will have separate TCP connection for them like One-One.
+
+Three-Way Handshaking:
+
+Sequence Number ‘x’ will random always because then it will be easy for Hackers to do something.
+In the above diagram, ‘X+1’ is acknowledgement number that is previous sequence number with 1.
+‘Y’ is nothing but server will do some math’s on the sequence number sent by the client then it will send a new sequence number to the Client.
+That’s it new connection is established and they are communicating with each other.
+
+Note: So many flags like SYN are there, the few are FINISH, RESET and Checksum.
+
+Network layer:
+Here we work with routers. Each and every router has Network address that consists of to which destination the data to be send.
+
+When a data packet is received from ‘A’ to ‘N1’, it will check it’s own routing table and it has forwarding table too that checks where the location is.
+
+Note: Routing table consists of path information(routing traffic) whereas Forwarding table consists of Port information(Destination), forwarding comes under routing
+
+This is known as hop by hop forwarding, nothing but hopping between routers until it reaches the correct router.
+
+Example: In IP address, it has four ports, like 192.168.2.30 (here first three is network address and the last one is device address).
+
+Now, we know that how it works but who is creating this routing table and if we wanna add some new routers, who does that? The answer is Control Plane. It will take care of it.
+
+Two steps of routing to create table,
+
+1.Static routing:
+
+Manual process. Not adaptive and it is time consuming.
+
+2.Dynamic routing:
+
+It evolve depends on the changes in the internet.
+
+Internet Protocol:
+
+It is nothing but Uniquely defines.
+It has 2types of IP’s such as IPv4 and IPv6.
+IPv4 is 32bits, 4 words whereas IPv6 consists of 128bits and this is the feature.
+IPv4:
+
+Example for IPv4 is: 5.6.7.8 and here each contains 8bits like binary bit of 5 is 00000101. Similarly for rest of the 3 So 8*4=32bits.
+
+Example: 192.168.2.30 ,here first 3 is Subnet ID(Network address) and the last one is Host ID.
+
+Whenever a router forwards a packet, it should know the subnet of the destination.
+
+Classes of IP address:
+
+It has 5 classes and each class is used for various tasks.
+
+
+Subnet masking:
+
+It is nothing but it masks the Network part of the IP address and leaves the Host part for us to use.
+
+Variable length subnetting:
+
+It is all about we can change the Network part(Subnet ID) of the IP address if we want.
+
+IETF, it stands for Internet Engineering Task Force and it is nothing but the Internet standard body.
+Reserved address:
+
+Example:- Local host -127.0.0.1 these are known as loop back address, so your device will act as Client as well as Server. Like for Testing puposes.
+
+IP Packets:
+
+Header: 20bytes.
+IP packet contains IP version, length, flags, protocols, checksum, addresses, TTL(Time To Live) etc. -TTL is nothing but if after a certain hops still the packet is not reached the destination means that time is called TTL.
+
+IPv6:
+
+This is four times larger than IPv4.
+That is IPv4 provides is approximately 4.3Billion unique addresses whereas IPv6 is approximately 3.4 * 10³⁸.
+
+Cons of IPv6:
+
+Not backward compatible.
+Lots of hardware work like ISP’s have to shift a lot.
+Middle Boxes:
+
+Like Firewall, it’s Global Internet as well as our trusted network.
+This is also works with packets that it allows some packets, rejects or modify them.
+It often works at network layer but also available at the transport layer too.
+It filters the IP packet based on various rules, and they are
+
+Address,
+Modify Packets,
+Port Numbers,
+Flags,
+Protocols.
+
+Two types of firewall:
+
+1.Stateless,
+2.Stateful(More efficient).
+
+NAT:
+
+It stands for Network Address Translator.
+It is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
+
+Host to Server:
+
+Initially, 10.0.0.1 (Source ID) — 200.100.0.1 (Destination ID).
+
+Then, 150.150.0.1 (Source ID) — 200.100.0.1 (Destination ID).
+
+Server to Host:
+
+Initially, 200.100.0.1 (Source ID) — 10.0.0.1 (Destination ID).
+
+Then, 200.100.0.1 (Source ID) — 150.150.0.1 (Destination ID).
+
+Note: Changes accordingly to NAT.
+
+Data-Link layer:
+
+It transfers in frames.
+This is responsible to transfer the packets received from Network layer to the Physical layer.
+Example: Many devices connected in LAN.
+
+If ‘1’ wants to do data transfer with ‘5’ means, it checks cache first, that is ARP cache. ‘1’ will send message to all the devices connected, that message has frames and that frame contains DLLA of sender and IP of destination.
+
+Note: ARP — Address Resolution Protocol, DLLA — Data Link Layer Address also called as MAC address.
+
+The router will ensure that the data reaches the correct destination.
+
+Framing,
+Error detection.
+
+That’s a Wrap guy’s. Thanks for Reading. Hope you guys are like the series. Please do like, share and comment your thoughts. It helps me to grow. Refer Part-1 and Part-2 in my stories section, am sure you will like reading those blogs. Thanks again!
+

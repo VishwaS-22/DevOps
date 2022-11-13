@@ -1,0 +1,173 @@
+Introduction:
+
+	Hey Folks! Am Vishwa, DevOps and OpenSource Enthusiast. Recently, I practiced Linux commands with the help of Kunal Kushwaha's DevOps Bootcamp. 
+I already learnt Linux through RHCSA hands-on workshop conducted in my college. I wanna share my learnings to other folks so that am publishing Blogs and 
+am also joined in LearningInPublic initiative started by Kunal. In this Part, you can learn about Basic and essential Linux Commands that I learnt. 
+In Part-2, you can learn indepth about commands like find, grep, OS and Network commands then working with operators.
+
+What is Shell? 
+	Basically, it is a CLI that interpret our commands and tell the Operating System what to do. One of the mostly used shells are bash and zsh.
+
+Basic Linux Commands:
+
+-> Current Location:
+
+$ pwd -> It displays which directory you are in.
+
+-> List Commands:
+
+$ ls -> List all the files and directories in the current directory.
+
+$ ls -a -> Displays all the hidden files/directories too.
+
+$ ls -l or -ltr -> Displays all the permissions that the files/directories has.
+
+Note: You will learn about File Permissions later in Part-2.
+
+$ ls -al -> It displays all the permissions for hidden files too.
+
+$ ls -R -> Displays all the Sub-directories too.
+
+-> Change Directory:
+
+$ cd directoryName -> It navigates to that directory as current directory.
+
+$ cd . -> Current directory.
+
+$ cd .. -> Navigates to the previous directory.
+
+$ cd ../folderName -> In previous directory there is a folder called "folderName" and it changes that as current directory.
+
+-> Cat:
+
+$ cat>hello.txt -> Creates a new file named hello in the current directory.
+
+$ cat hello.txt -> Displays the content written in the file named hello.
+
+$ cat hello.txt>hello1.txt -> Copies the content in hello to the new file hello1(if not created means, it automatically creates with the name you given).
+
+-> Tunneling:
+
+$ cat hello.txt | tr a-z A-Z > hello1.txt -> This will translate(tr) the content in the hello.txt to upperCase and store it in hello1.txt . Basically, Tunneling is nothing but the Output of the first command(before pipe) will act as Input for second command(after pipe).
+
+-> Echo:
+
+$ echo "word" -> Basically, it displays the specified word.
+
+$ echo "word" > hello.txt -> It stores the word in hello file.
+
+-> Make Directory or Create File:
+
+$ mkdir dirName -> It creates a directory with the name dirName in the current directory.
+
+$ mkdir dirName/dirName1 -> It creates a directory dirName1 in the existing directory dirName.
+
+$ touch fileName.txt -> It will create a file named fileName.txt in the current directory.
+
+-> Move or Rename:
+
+$ mv hello.txt hello1.txt -> hello.txt will be renamed as hello1.txt .
+
+$ mv hello1.txt ../newHello.txt -> This newHello.txt will be created in the previous directory(if not there), moves the content to it. If newHello.txt already there means, it will be overwritten and hello.txt will be removed from current directory.
+
+-> Copy:
+
+$ cp -R dirName dirName1 -> This will make a copy of all the files and sub-directories in the directory of dirName to dirName1.
+
+$ cp fileName fileName1 -> If fileName1 is not there means, it will create one and make a copy of fileName.
+
+$ cp dirName/* dirName1 -> This will copy only the files of the dirName directory to dirName1 in the current directory.
+
+$ cp dirName/*txt . -> This will make a copy of all the .txt extension files in dirName directory to the current directory.
+
+$ cp hello.txt hello1.txt hello2.txt dirName1 -> This will copy specific set of files to the dirName1 in the current directory.
+
+-> Removing:
+
+For empty directory, $ rmdir dirName -> This will remove the directory named dirName in the current directory permanently.
+
+For Non-empty directory, $ rm -r dirName (we can use -R also).
+
+For files, use $ rm fileName.txt -> It will remove it from the current directory.
+
+-> Disk Space:
+
+$ df -> Used to display details about the disk space.
+
+$ df -m -> It displays in Megabyte.
+
+$ df -h -> It displays in human readable format that is in Gigabyte.
+
+$ du -h -> It displays the size of each file and directories in human readable format.
+
+-> Head and Tail:
+
+$ head hello.txt -> It displays first 10 lines by default.
+
+$ head -n 2 hello.txt -> Displays only first two lines.
+
+$ tail hello.txt -> It displays the last 10 lines by default.
+
+$ tail -n 5 hello.txt -> Displays only the last five lines.
+
+-> $ top -> It displays the memory and cpu utilization.
+
+-> $ man commandName -> It displays the information about specific command.
+
+-> $ diff hello.txt hello1.txt -> Compares two files and gives output that the lines don't match.
+
+-> $ clear -> Clears the terminal.
+
+-> $ env -> To display all the environmental files.
+
+-> Process Command:
+
+$ ps -> It display the processes that are running in the current directory.
+
+$ ps -ef ->Displays the processes that are running in the local system.
+
+-> $ history -> Displays the history of our commands.
+
+-> $ wget URL -> To download any file/folder from the Internet using URL.
+
+Note: To install wget, try $ dnf install wget and then use it for downlaoding.
+
+-> Sorting:
+
+$ sort hello.txt -> Sort in alphabetical order.
+
+$ sort -r hello.txt -> It will sort the content of the file hello.txt in alphabetical order and displays it in reverse order.
+
+$ sort -n hello.txt -> Return in numerical order.
+
+$ sort -f hello.txt -> Does not care about caseSensitive.
+
+-> $ job -> It is used to list the jobs that are running in the background and in the foreground, nothing but started by shell.
+
+-> $ uname -> It displays the kernel name that we're running in our local system.
+
+-> $ hostname -> It will display the name of our local system.
+
+-> $ hostname -i -> It displays our local system's IP address.
+
+-> Zip and Unzip files:
+
+$ zip hellos.zip hello.txt hello1.txt -> This will create a copy of two files in .zip file in the current directory.
+
+$ unzip hellos.zip -> This will extract this zipped file and the .zip file will also be there in the current directory.
+
+-> $ lscpu -> This will display the CPU details like architecture, core, caches etc.
+
+-> RAM usage:
+
+$ free -> This will displays the free memory.
+
+$ free -h -> Displays in human readable format as Gigabytes.
+
+Linux Setup(Beginner's):
+
+For Window's user(Me),
+
+You can use WSL for practicing, at beginning WSL is enough in my perception. You can find step by step guidance for installing WSL2 on windows10/11 in Google itself.
+
+Thanks for reading folks. Hope you find it useful, if means please like, share, comment. Part-2 for Linux Essentials will be releasing soon. Thankyou again. https://vishwa-s.hashnode.dev/linux-essentials-part-1

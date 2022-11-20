@@ -98,6 +98,8 @@ func bookingTicket(userTickets uint, firstName string, lastName string, email st
 	userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10)
 	bookings = append(bookings, userData)
 	fmt.Printf("List of bookings is %v\n", bookings)
+	
+	bookings = append(bookings, firstName+" "+lastName)
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive confirmation mail at %v.\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets are remaining for %v.\n", remainingTickets, conferenceName)
 }

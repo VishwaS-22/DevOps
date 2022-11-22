@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 var conferenceName = "Go Conference"
@@ -10,7 +9,14 @@ var conferenceName = "Go Conference"
 const conferenceTickets = 50
 
 var remainingTickets uint = 50
-var bookings = make([]map[string]string, 0)
+var bookings = make([]userData, 0)
+
+type userData struct {
+	fName           string
+	lName           string
+	email           string
+	numberOfTickets uint
+}
 
 func main() {
 
@@ -62,7 +68,7 @@ func greetings() {
 func firstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
-		firstNames = append(firstNames, booking["fNames"])
+		firstNames = append(firstNames, booking.fName)
 	}
 	return firstNames
 }
@@ -91,12 +97,14 @@ func UserInput() (string, string, string, uint) {
 
 func bookingTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets = remainingTickets - userTickets
-	var userData = make(map[string]string)
-	userData["fNames"] = firstName
-	userData["lNames"] = lastName
-	userData["email"] = email
-	userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10)
-	bookings = append(bookings, userData)
+	var userData1 = userData{
+		fName:           firstName,
+		lName:           lastName,
+		email:           email,
+		numberOfTickets: userTickets,
+	}
+
+	bookings = append(bookings, userData1)
 	fmt.Printf("List of bookings is %v\n", bookings)
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive confirmation mail at %v.\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets are remaining for %v.\n", remainingTickets, conferenceName)

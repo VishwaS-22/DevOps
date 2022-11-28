@@ -19,6 +19,7 @@ Having found the kidnappers, Annalyn considers which of the following actions sh
 	*If Annalyn does not have her dog then she and the prisoner must be very sneaky! 
 	Annalyn can free the prisoner if the prisoner is awake and the knight and archer are both sleeping, but if the prisoner is sleeping they can't be rescued: 
 	the prisoner would be startled by Annalyn's sudden appearance and wake up the knight and archer.
+
 You have four tasks: to implement the logic for determining if the above actions are available based on the state of the three characters found in the forest 
 and whether Annalyn's pet dog is present or not.
 

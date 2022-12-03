@@ -1,6 +1,7 @@
+//This is nothing but Go Workspace, we'll use this while we've multiple moodules.
+
 go 1.19
 
 use (
 	./Booking-app
-	./Problems
 )

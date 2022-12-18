@@ -1,0 +1,174 @@
+Introduction:
+
+Hey folks! Am Vishwa, DevOps and OpenSource Enthusiast. This is the second part of Linux Essentials, in this you will learn about Linux File Permissions, Use of find, grep, OS commands. You can find Part-1 in my Blogs Page.
+
+1. File Permissions:
+
+$ls -l -> It lists all the files/folders with additional information like Date, Time, It's permission.
+
+In result first thing we've is Permission, like -rwxrwxrwx or drwxrwxrwx, here if 'd' is at first place means it refers to Directory else it is File(-), r is read permission, w is write permission and x is for execution rights.
+
+Permission is split into 3 parts,
+
+After '-' or 'd', first three(rwx) is for user(u), second refers group permission(group) and last three is for others.
+
+-> By using chmod we can change the permissions for file/folder.
+
+-> We can do it in two ways, one is Symbolic way and another one is Absolute way.
+
+I. Symbolic mode:
+
+This uses symbols like u(user), g(group) and o(others) and permissions are represented by r, w, x and for modifying permissions we use operators like '+', '-' and '='.
+
+After creating a file, this command $ls -ltr | grep fileName will display the file permission of that file alone.
+
+Result:
+
+$chmod u+x fileName, it will add execution rights(x) to user/owner.
+
+Result: After adding we will get, -rwxr--r-- another details but before adding -rw-r--r-- . Here x is added in User(u) part.
+
+Similarly for removing we use '-', for assigning and override existing permissions we use '='.
+
+$chmod g=rwx,o=rwx fileName, it will add rwx rights to both group and others too.
+
+Result: -rwxrwxrwx
+
+II. Absolute mode:
+
+This represent permissions by using 3 digit octal numbers ranging 0-7 and to modify them we use operators.
+
+For read=4, write=2, execute=1.
+
+$chmod 777 fileName, it will add all the three rights(rwx) to all the three parts that is user, group and others.
+
+Result: After adding -rwxrwxrwx, before adding permissions it was -rw-r--r--
+
+Similarly, set read for user, read and execute for group and execute for other.
+
+$chmod 451 fileName.
+
+Result: -r--r-x--x
+
+Another example, set rwx to user, r & x to g and r to o.
+
+$chmod 754 fileName.
+
+Result: -rwxr-xr--
+
+What is the use of find command?
+
+-> Find command helps us to show the hierarchy of a file or a folder.
+
+Using for various of purpose and they are,
+
+$find . -> Displays all the files and directories in the current directory, similarly for parent directory($find ..) .
+
+$find dirName -> Displays everything in it.
+
+$find . -type d -> Displays only the directory.
+
+$find . -type f -> Displays only the files.
+
+$find . -type f -name "fileName" -> For particular file, similarly for directory(change 'f' as 'd' and fileName to dirName).
+
+$find . -type f name "file*" -> Displays the files that has name "file".
+
+$find . -type f -name "*.txt" -> Displays .txt extension files.
+
+-> We can check with the help of date/time also.
+
+Time:
+
+$find . -type f -mmin -20 -> Displays the files that are modified less than 20mins.
+
+$find . -type f -mmin +15 -> Files that are modified before 15mins.
+
+Days:
+
+$find . -type f -mtime -10 -> Modified in last 10days.
+$find . -size +1k -> Displays more than 1kb sized files/folders, similarly 'g' for Gb, 'm' for Mb.
+
+$find . -size -1k -> Less than 1kb sized files/folders.
+
+$find . -empty -> Displays empty files/folders in the current directory.
+
+$find . -perm 777 -> Displays files/dir that has rwx permissions.
+
+$find . -type f -name "*.txt" -exec rm -rf {} -> Will remove all the .txt extension files.
+
+Here, we will get name from find command then execute(exec) will remove those by adding in a placeholder({}).
+
+What is the use of grep command?
+
+-> It is used to find a particular content in a file and it is Case sensitive.
+
+$grep "Vishwa" fileName -> Displays the word by highlighted if it is a sentence.
+
+Result: Am Vishwa.
+
+Not Case sensitive:
+
+$grep -i "vishwa" fileName -> It displays without considering case sensitive.
+
+Not Case sensitive and should be a word:
+
+$grep -iw "vishwa" fileName
+
+For to know line number,
+
+$grep -n "DevOps" fileName
+
+Combine all the three,
+
+$grep -win "vishwa" fileName
+
+Another commands,
+
+$grep -B 3 "vishwa" fileName -> It displays the previous 3 lines and also the word's line.
+
+$grep -win "vishwa" ./*.txt -> To check in the current directory, when we don't know where it is.
+
+$grep -rwin "vishwa" . -> It displays where the word in the current directory.
+
+$grep -wirl "vishwa" . -> It displays the matches in every file.
+
+$grep -wirc "vishwa" . -> Count of the word in the current directory.
+
+$history | grep "grep" -> It displays only the history of grep used commands.
+
+$grep -P "\w" file.txt -> It displays all the words.
+
+$grep -P "\d{3}-\d{3}-\d{4}" fileName -> Displays the phone number available in the file.
+
+What is the use of Alias?
+
+-> By using this command we can set alias name for any command.
+
+Example: ls as 'l', here after setting this both will do the same work.
+
+For setting permanently,
+
+In bash shell, (from root(~) directory)
+
+$cat .bashrc -> To see the paths.
+
+$vi .bashrc -> Then type here, like alias l="ls" and save it.
+
+Similarly for other shells like zsh, visit respective file and make changes.
+
+Operating System Command:
+
+$uname -> Displays the name of the OS.
+
+$uname -o -> Type of the OS.
+
+$uname -m -> Architecture of the OS.
+
+$uname -r -> Kernel version.
+
+$cat /etc/os-release -> Displays all the information about the OS.
+
+That's a wrap folks! Thanks for reading the blog. Hope you find this as an useful one for your learning. Happy learning guys! I'll be covering about User Management, Network commands and Working with operators in the Part-3 of Linux Essentials. Thanks again.
+
+https://vishwa-s.hashnode.dev/linux-essentials-part-2

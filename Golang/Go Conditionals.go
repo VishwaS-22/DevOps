@@ -2,7 +2,6 @@
 //Bank Heist
 
 package main
-
 import (
   "fmt"
   "math/rand"
@@ -47,6 +46,4 @@ func main() {
     }
   }
   fmt.Println("isHeistOn is currently:",isHeistOn)
-  
-
 }

@@ -3,6 +3,7 @@
 
 package main
 import "fmt"
+
 func main(){
   var publisher,writer,artist,title string
   title="Mr.GoToSleep"

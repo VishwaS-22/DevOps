@@ -1,4 +1,5 @@
-/*Instructions
+//Instructions
+/*
 In this exercise you'll be writing code to analyze the production in a car factory.
 
 1. Calculate the number of working cars produced per hour 

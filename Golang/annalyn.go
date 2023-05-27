@@ -9,7 +9,6 @@ After some time spent following her best friend's trail, she finds the camp in w
 It turns out there are two kidnappers: a mighty knight and a cunning archer.
 
 Having found the kidnappers, Annalyn considers which of the following actions she can engage in:
-
 1.Fast attack: a fast attack can be made if the knight is sleeping, as it takes time for him to get his armor on, so he will be vulnerable.
 2.Spy: the group can be spied upon if at least one of them is awake. Otherwise, spying is a waste of time.
 3.Signal prisoner: the prisoner can be signaled using bird sounds if the prisoner is awake and the archer is sleeping, as archers are trained in bird signaling so they could intercept the message.
@@ -22,7 +21,6 @@ Having found the kidnappers, Annalyn considers which of the following actions sh
 
 You have four tasks: to implement the logic for determining if the above actions are available based on the state of the three characters found in the forest 
 and whether Annalyn's pet dog is present or not.
-
 1. Check if a fast attack can be made
 2. Check if the group can be spied upon
 3. Check if the prisoner can be signaled

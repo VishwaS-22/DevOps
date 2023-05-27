@@ -29,7 +29,6 @@ Although not optimal yet, you will follow the strategy your friend Alex has been
 package blackjack
 
 // ParseCard returns the integer value of a card following blackjack ruleset.
-
 func ParseCard(card string) int { 
 	switch card{
         case "one":
@@ -60,7 +59,6 @@ func ParseCard(card string) int {
 }
 
 // FirstTurn returns the decision for the first turn, given two cards of the player and one card of the dealer.
-
 func FirstTurn(card1, card2, dealerCard string) string {
     score:=ParseCard(card1)+ParseCard(card2)
     dealerValue:=ParseCard(dealerCard)
